@@ -37,7 +37,7 @@ include_once './Connection.php';
       </div>
     </div>
     <hr>
-    <div class="row">
+    <div class="row md-5">
       <div class="col-md-12">
         <h4 class="mb-3">Informações Pessoais</h4>
         <form>
@@ -51,25 +51,26 @@ include_once './Connection.php';
               <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Digite seu sobrenome..." required>
             </div>
           </div>
-          <div class="row">
+          <div class="row mb-5">
             <div class="col-md-4 mb-3">
-              <label for="CPF">CPF</label>
-              <input type="text" name="CPF" id="CPF" class="form-control" placeholder="CPF" required>
+              <label for="cpf">CPF</label>
+              <input type="text" name="cpf" id="cpf" class="form-control" placeholder="Digite apenas os números do CPF" maxlength=14 oninput="maskCPF(this)" required>
             </div>
             <div class="col-md-4">
               <label for="Telefone">Telefone</label>
               <input type="text" name="phone" id="phone" class="form-control" placeholder="Telefone com DDD..." required>
             </div>
-              <div class="col-md-4">
-                <label for="email">E-mail</label>
-                <input type="text" name="email" id="email" class="form-control" placeholder="seu melhor e-mail..." required>
-              </div>
+            <div class="col-md-4">
+              <label for="email">E-mail</label>
+              <input type="text" name="email" id="email" class="form-control" placeholder="seu melhor e-mail..." required>
             </div>
           </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
       </div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <script src="js/custom.js"></script>
 </body>
 </html>
