@@ -2,7 +2,7 @@
 function maskCPF(numberCPF){
   var cpf = numberCPF.value;
   //alert(cpf);
-  if(isNaN(cpf[length -1 ])){
+  if(isNaN(cpf[cpf.length -1 ])){
     numberCPF.value = cpf.substring(0,cpf.length -1);
     return;
   }
