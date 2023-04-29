@@ -12,8 +12,9 @@ include_once './Connection.php';
   <link rel="shortcut icon" href="./img/icons/favicon-32x32.png" type="image/x-icon">
   <title>Detalhes do Produto</title>
 </head>
-<body
+<body>
     <?php
+          include_once 'menu.php';
           $query_products = "SELECT id, name, description, price, image FROM products WHERE id=:id LIMIT 1";
           $result_products = $conn->prepare($query_products);
           $result_products->bindParam(':id', $id, PDO::FETCH_ASSOC);

@@ -13,3 +13,12 @@ function maskCPF(numberCPF){
     numberCPF.value += "-";
   }
 }
+function maskPhone(numberPhone){
+  var phone = numberPhone.value;
+  if(phone.length < 14){
+    phone = phone.replace(/\D/g,"");
+    phone = phone.replace(/^(\d{2})(\d)/g,"($1)$2");
+    phone = phone.replace(/(\d)(\d{3})$/,"$1-$2");
+  }
+  numberPhone.value = phone;
+}

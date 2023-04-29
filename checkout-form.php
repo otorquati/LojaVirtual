@@ -12,16 +12,17 @@ include_once './Connection.php';
   <link rel="shortcut icon" href="./img/icons/favicon-32x32.png" type="image/x-icon">
   <title>Formulário de Pagamento</title>
 </head>
-<body
+<body>
     <?php
+      include_once 'menu.php';
       $query_products = "SELECT id, name, price FROM products WHERE id=:id LIMIT 1";
       $result_products = $conn->prepare($query_products);
       $result_products->bindParam(':id', $id, PDO::FETCH_ASSOC);
       $result_products->execute();
       $row_product = $result_products->fetch(PDO::FETCH_ASSOC);
-      //var_dump($row_product);
       extract($row_product);
     ?>
+
   <div class="container">
     <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="./img/icons/favicon-32x32.png" alt="" width="72" height="72">
@@ -58,7 +59,7 @@ include_once './Connection.php';
             </div>
             <div class="col-md-4">
               <label for="Telefone">Telefone</label>
-              <input type="text" name="phone" id="phone" class="form-control" placeholder="Telefone com DDD..." required>
+              <input type="text" name="phone" id="phone" class="form-control" placeholder="Telefone com DDD..." maxlength=14 oninput="maskPhone(this)"required>
             </div>
             <div class="col-md-4">
               <label for="email">E-mail</label>
